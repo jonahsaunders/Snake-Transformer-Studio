@@ -1,0 +1,32 @@
+{
+  "name": "snake-transformer-studio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Standalone and KiCad design workspace for snake-winding matrix transformers.",
+  "scripts": {
+    "test": "npm run test:snake && npm run test:package",
+    "test:snake": "node tests/snake-geometry.mjs && node tests/snake-physics.mjs && node tests/snake-io.mjs",
+    "test:package": "node -e \"const{spawnSync}=require('node:child_process');const p=process.env.PYTHON||(process.platform==='win32'?'python':'python3');const r=spawnSync(p,process.argv.slice(1),{stdio:'inherit'});if(r.error)console.error(r.error.message);process.exit(r.status??1)\" -- -m unittest discover -s tests -p test_snake_package.py",
+    "build": "node -e \"const{spawnSync}=require('node:child_process');const p=process.env.PYTHON||(process.platform==='win32'?'python':'python3');const r=spawnSync(p,process.argv.slice(1),{stdio:'inherit'});if(r.error)console.error(r.error.message);process.exit(r.status??1)\" -- scripts/build_snake_package.py",
+    "dev": "node -e \"const{spawnSync}=require('node:child_process');const p=process.env.PYTHON||(process.platform==='win32'?'python':'python3');const r=spawnSync(p,process.argv.slice(1),{stdio:'inherit'});if(r.error)console.error(r.error.message);process.exit(r.status??1)\" -- ipc_entry.py --browser",
+    "serve": "node -e \"const{spawnSync}=require('node:child_process');const p=process.env.PYTHON||(process.platform==='win32'?'python':'python3');const r=spawnSync(p,process.argv.slice(1),{stdio:'inherit'});if(r.error)console.error(r.error.message);process.exit(r.status??1)\" -- ipc_entry.py --no-browser"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonahsaunders/Snake-Transformer-Studio.git"
+  },
+  "keywords": [
+    "kicad",
+    "transformer",
+    "matrix-transformer",
+    "snake-winding",
+    "simulation",
+    "pcb"
+  ],
+  "devDependencies": {
+    "happy-dom": "20.14.0",
+    "playwright": "1.62.1"
+  }
+}

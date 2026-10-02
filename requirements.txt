@@ -1,0 +1,7 @@
+# Only the KiCad plugin needs this dependency. Standalone browser mode uses
+# Python 3.9+ standard library alone; do not install this file for standalone.
+kicad-python>=0.4.0
+
+# Optional native window: install pywebview in the interpreter running the app.
+# It is intentionally excluded here so a missing GUI backend cannot prevent
+# KiCad from installing the plugin. Browser mode has the same capabilities.

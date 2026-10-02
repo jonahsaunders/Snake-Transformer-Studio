@@ -1,0 +1,28 @@
+{
+  "$schema": "https://go.kicad.org/api/schemas/v1",
+  "identifier": "com.jonahsaunders.snaketransformerstudio",
+  "name": "Snake Transformer Studio",
+  "description": "Design and simulate PCB snake-winding matrix transformers.",
+  "runtime": {
+    "type": "python",
+    "min_version": "3.9"
+  },
+  "actions": [
+    {
+      "identifier": "open_snake_studio",
+      "name": "Snake Transformer Studio",
+      "description": "Design snake-winding matrix transformers and place copper in the open board.",
+      "scopes": [
+        "pcb"
+      ],
+      "entrypoint": "ipc_entry.py",
+      "show-button": true,
+      "icons-light": [
+        "resources/icon-light-24.png"
+      ],
+      "icons-dark": [
+        "resources/icon-dark-24.png"
+      ]
+    }
+  ]
+}
